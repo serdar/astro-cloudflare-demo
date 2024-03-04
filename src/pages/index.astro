@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const resp = await fetch(Astro.url + "api/echo");
+
+const message = await resp.text();
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <p>
+      {message}
+    </p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
